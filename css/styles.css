@@ -6,7 +6,6 @@ img{max-width:100%}
 a{color:#0A2472}a:hover{color:#1268E0}
 .pg{container-type:inline-size;container-name:pg;font-family:'Manrope',system-ui,sans-serif;color:#0E1A3A;background:#FFFDF8;overflow-x:clip;-webkit-font-smoothing:antialiased}
 .pg *,.fx *{box-sizing:border-box}
-.serif{font-family:'Cormorant Garamond',Georgia,serif}
 /* Contenedor principal: más ancho y con márgenes laterales fluidos (20px en móvil → 72px en pantallas grandes) */
 :root{--gutter:clamp(20px,4vw,72px)}
 .wrap{max-width:1520px;margin:0 auto;padding:0 var(--gutter)}
@@ -24,7 +23,6 @@ h2.ttl em{font-style:italic}
 .btn-wa{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.65)}.btn-wa:hover{background:#FFFFFF;color:#061848;border-color:#FFFFFF}
 .btn-ghost{background:rgba(10,36,114,.15);color:#FFFDF8;border-color:rgba(255,253,248,.55)}.btn-ghost:hover{border-color:#FFFDF8;color:#FFFDF8;background:rgba(10,36,114,.35)}
 .btn-navy{background:#1268E0;color:#FFFFFF}.btn-navy:hover{background:#0A30B8;color:#FFFFFF}
-.btn-line{background:transparent;color:#0A2472;border-color:rgba(10,36,114,.35)}.btn-line:hover{border-color:#0A2472;color:#0A2472}
 .btn-sm{min-height:44px;padding:0 20px;font-size:11.5px}
 .txtbtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0;background:none;border:0;cursor:pointer;font:600 14px 'Manrope',sans-serif;color:#0A2472;letter-spacing:.02em}
 .txtbtn span.u{border-bottom:1px solid #20B7F1;padding-bottom:3px}
@@ -43,9 +41,6 @@ h2.ttl em{font-style:italic}
 .logo-foot{height:120px}
 .hdr .logo{position:relative}
 .hdr .logo-img{height:100px;filter:drop-shadow(0 2px 4px rgba(3,12,40,.55)) drop-shadow(0 8px 24px rgba(3,12,40,.45))}
-.logo-tx{display:flex;flex-direction:column;line-height:1}
-.logo-tx small{font-size:10px;letter-spacing:.38em;font-weight:600;opacity:.85}
-.logo-tx b{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:30px;letter-spacing:.01em;margin-top:4px}
 .nav{display:flex;gap:34px;align-items:center}
 .nav a{color:rgba(255,253,248,.9);text-transform:uppercase;font-size:12.5px !important;letter-spacing:.16em !important;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.05em;position:relative;padding:14px 0}
 .nav a::after{content:'';position:absolute;left:0;right:0;bottom:8px;height:1px;background:#20B7F1;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
@@ -200,9 +195,6 @@ h2.ttl em{font-style:italic}
 @keyframes hopShadow{0%,12%,88%,100%{transform:scale(1);opacity:1}50%{transform:scale(.55);opacity:.45}}
 .map .pulse{transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite}
 @keyframes ping{0%{transform:scale(1);opacity:.9}100%{transform:scale(4);opacity:0}}
-.pin{position:absolute;left:46%;top:44%;display:flex;flex-direction:column;align-items:center;gap:10px;transform:translate(-50%,-100%)}
-.pin b{display:block;background:#FFFDF8;color:#0A2472;font-size:13px;font-weight:700;padding:8px 14px;white-space:nowrap}
-.pin i{display:block;width:16px;height:16px;border-radius:50%;background:#20B7F1;box-shadow:0 0 0 8px rgba(32,183,241,.25);animation:pulse 2.4s ease-out infinite}
 .map-foot{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:20px 24px;background:rgba(6,24,72,.85)}
 .map-foot p{margin:0;font-size:13px;color:#EAF2FD;letter-spacing:.04em}
 
@@ -246,7 +238,6 @@ h2.ttl em{font-style:italic}
 @keyframes drop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
 @keyframes bob{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(20px);opacity:.4}}
 @keyframes rot{to{transform:rotate(360deg)}}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(32,183,241,.5)}100%{box-shadow:0 0 0 22px rgba(32,183,241,0)}}
 @keyframes reveal{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
 @keyframes par{from{transform:translateY(0)}to{transform:translateY(140px)}}
 @keyframes parS{from{transform:translateY(-40px)}to{transform:translateY(40px)}}
