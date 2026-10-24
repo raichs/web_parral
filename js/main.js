@@ -152,6 +152,26 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// ===== Pantalla completa =====
+const fsBtn = $('.fs-btn');
+const root = document.documentElement;
+const requestFs = root.requestFullscreen || root.webkitRequestFullscreen;
+if (requestFs) {
+  fsBtn.hidden = false;
+  const syncFs = () => {
+    const on = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    $('i', fsBtn).className = 'fa-solid ' + (on ? 'fa-compress' : 'fa-expand');
+    fsBtn.setAttribute('aria-label', on ? 'Salir de pantalla completa' : 'Ver en pantalla completa');
+    fsBtn.title = on ? 'Salir de pantalla completa' : 'Pantalla completa';
+  };
+  fsBtn.addEventListener('click', () => {
+    if (document.fullscreenElement || document.webkitFullscreenElement) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    else requestFs.call(root)?.catch?.(() => {});
+  });
+  document.addEventListener('fullscreenchange', syncFs);
+  document.addEventListener('webkitfullscreenchange', syncFs);
+}
+
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
 renderCarta();
