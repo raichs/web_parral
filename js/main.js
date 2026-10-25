@@ -363,7 +363,12 @@ if (requestFs) {
 
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
-renderCarta();
-loadInstagram();
+// Animaciones del mapa y del horario: solo corren cuando están en pantalla
+const vis = new IntersectionObserver((entries) => entries.forEach((en) => en.target.classList.toggle('in-view', en.isIntersecting)));
+$$('.map, .hcard').forEach((el) => vis.observe(el));
+
+// La carta y el feed están más abajo: se dibujan cuando el navegador queda libre
+const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1));
+idle(() => { renderCarta(); loadInstagram(); });
 syncOpen();
 setInterval(syncOpen, 60000);
