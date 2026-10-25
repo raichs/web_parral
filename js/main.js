@@ -140,7 +140,6 @@ $$('.pg section[id]').forEach((s) => spy.observe(s));
 
 // ===== Carta digital =====
 const FISH = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c3-4.5 9-6 14-3l3.5-2.5-1 4.5 1 4.5L17 13c-5 3-11 1.5-14-1Z"></path><circle cx="14" cy="11" r=".6" fill="currentColor"></circle></svg>';
-const ARROW = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"></path></svg>';
 const catLabel = Object.fromEntries(CATS);
 let currentCat = 'todos';
 
@@ -154,16 +153,13 @@ function renderCarta() {
   $('#items').innerHTML = MENU.filter((m) => currentCat === 'todos' || m.cat === currentCat).map((m) => `
 <article class="item">
 <div class="item-img">${m.img
-    ? `<img src="${m.img}" alt="${esc(m.name)}" loading="lazy" decoding="async">`
+    ? `<img src="${m.img}" alt="${esc(m.name)}" width="112" height="112" loading="lazy" decoding="async">`
     : `<div class="ph">${FISH}Foto pendiente</div>`}</div>
 <div style="min-width: 0">
 <p class="item-cat">${esc(catLabel[m.cat])}</p>
 <div class="dish-row"><h3>${esc(m.name)}</h3><span class="lead"></span><span class="price">${m.price || P}</span></div>
 <p class="d">${esc(m.desc)}</p>
-<div class="item-foot">
-${m.featured ? '<span class="badge">Recomendado</span>' : ''}
-<button class="txtbtn" type="button" data-wa="${esc(m.name)}"><span class="u">Consultar por WhatsApp</span>${ARROW}</button>
-</div>
+${m.featured ? '<div class="item-foot"><span class="badge">Recomendado</span></div>' : ''}
 </div>
 </article>`).join('');
 }
@@ -177,7 +173,7 @@ function renderInstagram(posts) {
   if (!el || !posts.length) return;
   el.innerHTML = posts.slice(0, 8).map((p, i) => `
 <a class="ig-post" href="${esc(p.url)}" target="_blank" rel="noopener" style="animation-delay: ${i * 0.06}s">
-<img src="${esc(p.img)}" alt="${esc(p.caption || 'Publicación de Instagram')}" loading="lazy" decoding="async">
+<img src="${esc(p.img)}" alt="${esc(p.caption || 'Publicación de Instagram')}" width="480" height="640" loading="lazy" decoding="async">
 <span class="ig-type" aria-hidden="true">${p.type === 'reel' ? REEL : PHOTO}</span>
 <span class="ig-cap"><span>${esc(p.caption || '')}</span><b>Ver en Instagram</b></span>
 </a>`).join('');
@@ -227,7 +223,7 @@ let lbList = [], lbIdx = 0, lbBack = null, lbX = null;
 function bigSrc(img) {
   const set = (img.getAttribute('srcset') || '').split(',').map((s) => s.trim().split(/\s+/)).filter((x) => x[0]);
   if (set.length) return set.sort((a, b) => parseInt(b[1]) - parseInt(a[1]))[0][0];
-  return img.getAttribute('src').replace(/-sm\.webp$/, '.webp');
+  return img.getAttribute('src').replace(/-sm\.webp(?=\?|$)/, '.webp');
 }
 function lbCaption(img) {
   const cap = img.closest('figure')?.querySelector('figcaption em');
@@ -353,7 +349,7 @@ if (requestFs) {
   fsBtn.hidden = false;
   const syncFs = () => {
     const on = !!(document.fullscreenElement || document.webkitFullscreenElement);
-    $('i', fsBtn).className = 'fa-solid ' + (on ? 'fa-compress' : 'fa-expand');
+    $('use', fsBtn).setAttribute('href', on ? '#i-compress' : '#i-expand');
     fsBtn.setAttribute('aria-label', on ? 'Salir de pantalla completa' : 'Ver en pantalla completa');
     fsBtn.title = on ? 'Salir de pantalla completa' : 'Pantalla completa';
   };
