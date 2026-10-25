@@ -17,6 +17,7 @@
 <link rel="preload" as="image" href="img/ceviche-mixto.webp" imagesrcset="img/ceviche-mixto-sm.webp 900w, img/ceviche-mixto.webp 2000w" imagesizes="100vw">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/instagram.js" defer></script>
 <script src="js/main.js" defer></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Restaurant","name":"Restobar El Parral","servesCuisine":"Pescados y mariscos","telephone":"+51958640141",
@@ -36,6 +37,7 @@
 <img class="logo-img" src="img/logo.svg" alt="Restobar El Parral">
 </a>
 <nav class="nav" aria-label="Principal">
+<a href="#inicio">Inicio</a>
 <a href="#favoritos">Favoritos</a>
 <a href="#carta">Carta</a>
 <a href="#historia">Historia</a>
@@ -44,7 +46,7 @@
 </nav>
 <div class="hdr-actions">
 <button class="btn btn-navy btn-sm hdr-cta" type="button" data-wa="un pedido o una reserva">
-Reserva tu mesa
+<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Reserva tu mesa
 </button>
 <button class="fs-btn" type="button" aria-label="Ver en pantalla completa" title="Pantalla completa" hidden><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
 <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu">
@@ -54,16 +56,24 @@ Reserva tu mesa
 </div>
 </div>
 <nav class="mmenu" id="mmenu" hidden aria-label="Menú móvil">
-<a class="ml" href="#favoritos">Favoritos <span>01</span></a>
-<a class="ml" href="#carta">Carta <span>02</span></a>
-<a class="ml" href="#historia">Historia <span>03</span></a>
-<a class="ml" href="#galeria">Galería <span>04</span></a>
-<a class="ml" href="#ubicacion">Ubicación <span>05</span></a>
-<button class="btn btn-wa" type="button" style="margin-top: 20px" data-wa="un pedido o una reserva">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5Z"></path><path d="M8.5 9.5c.3 2.6 2.4 4.7 5 5"></path></svg>
-Pedir por WhatsApp
-</button>
+<div class="mm-links">
+<a class="ml" href="#inicio"><span>01</span>Inicio<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<a class="ml" href="#favoritos"><span>02</span>Favoritos<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<a class="ml" href="#carta"><span>03</span>Carta<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<a class="ml" href="#historia"><span>04</span>Historia<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<a class="ml" href="#galeria"><span>05</span>Galería<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<a class="ml" href="#ubicacion"><span>06</span>Ubicación<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+</div>
+<div class="mm-foot">
+<p class="mm-hours"><i class="fa-regular fa-clock" aria-hidden="true"></i>Todos los días · 9:00 a.m. – 6:00 p.m.</p>
+<div class="mm-act">
+<button class="btn btn-navy" type="button" data-wa="una reserva"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Reservar</button>
+<button class="btn btn-wa" type="button" data-map><i class="fa-solid fa-location-arrow" aria-hidden="true"></i>Cómo llegar</button>
+</div>
+<div class="socials"><a href="https://www.facebook.com/RestobarElParral" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a><a href="https://www.instagram.com/restobarelparral" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a><a href="https://wa.me/51958640141" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></div>
+</div>
 </nav>
+<span class="hdr-progress" aria-hidden="true"></span>
 </header>
 
 <!-- ======== HERO ======== -->
@@ -184,7 +194,7 @@ Pedir por WhatsApp
 <!-- ======== CARTA ======== -->
 <section class="sec carta" id="carta">
 <div class="wrap carta-grid">
-<div class="carta-side rv">
+<div class="carta-side">
 <p class="eyebrow" style="color: #1250C4"><span class="rule"></span>Carta digital</p>
 <h2 class="ttl">Nuestra <em>carta</em></h2>
 <div class="cats" id="cats" role="group" aria-label="Filtrar por categoría">
@@ -210,9 +220,9 @@ Escríbenos por WhatsApp
 <section class="sec hist" id="historia">
 <div class="wrap hist-grid">
 <div class="hist-media rv">
-<div class="hist-a"><img class="px" src="img/terraza-atardecer.webp" srcset="img/terraza-atardecer-sm.webp 900w, img/terraza-atardecer.webp 1024w" sizes="(max-width: 860px) 100vw, 60vw" width="1024" height="1024" loading="lazy" decoding="async" alt="Terraza frente al mar al atardecer, con comensales y luces colgantes"></div>
+<div class="hist-a"><img class="px" src="img/terraza-mar.webp" srcset="img/terraza-mar-sm.webp 900w, img/terraza-mar.webp 1440w" sizes="(max-width: 860px) 100vw, 60vw" width="1440" height="1080" loading="lazy" decoding="async" alt="Familia almorzando en la terraza de El Parral con vista al mar de Puerto Eten" style="object-position: 38% 50%"></div>
 <div class="hist-b"><img src="img/muelle-eten.webp" srcset="img/muelle-eten-sm.webp 900w, img/muelle-eten.webp 1280w" sizes="(max-width: 860px) 100vw, 60vw" width="1280" height="720" loading="lazy" decoding="async" alt="Muelle de Eten Puerto al atardecer"></div>
-<p class="hist-cap">Atardecer en la costa de Lambayeque</p>
+<p class="hist-cap">Nuestra terraza frente al mar de Eten</p>
 </div>
 <div class="hist-copy rv">
 <img class="hist-logo" src="img/logo-historia.svg" alt="Restobar El Parral">
@@ -252,6 +262,23 @@ Escríbenos por WhatsApp
 </div>
 </section>
 
+<!-- ======== INSTAGRAM ======== -->
+<section class="sec ig" id="instagram">
+<div class="wrap">
+<div class="sec-head rv">
+<div class="l">
+<p class="eyebrow" style="color: #1250C4"><span class="rule"></span>Instagram</p>
+<h2 class="ttl">Lo último <em>en nuestras redes</em></h2>
+</div>
+<div class="r ig-head-r">
+<p>Platos nuevos, promociones y lo que pasa cada día en El Parral.</p>
+<a class="btn btn-navy btn-sm" href="https://www.instagram.com/restobarelparral" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Seguir a @restobarelparral</a>
+</div>
+</div>
+<div class="ig-feed" id="ig-feed"></div>
+</div>
+</section>
+
 <!-- ======== UBICACIÓN ======== -->
 <section class="sec loc" id="ubicacion">
 <div class="faro">
@@ -270,8 +297,7 @@ Escríbenos por WhatsApp
 <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"></path><circle cx="12" cy="9" r="2.5"></circle></svg><dt>Dirección</dt><dd>Calle José Olaya 132, Eten Puerto, Chiclayo, Lambayeque</dd></div>
 <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><dt>Horario</dt><dd>Todos los días · 9:00 a.m. – 6:00 p.m.</dd></div>
 <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5Z"></path></svg><dt>WhatsApp</dt><dd><a href="https://wa.me/51958640141" target="_blank" rel="noopener">+51 958 640 141</a></dd></div>
-<div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle></svg><dt>Redes</dt><dd><a href="https://www.instagram.com/restobarelparral" target="_blank" rel="noopener">Instagram @restobarelparral</a> · <a href="https://www.facebook.com/RestobarElParral" target="_blank" rel="noopener">Facebook /RestobarElParral</a></dd></div>
-<div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 21 3l-8 18-2-8-8-2Z"></path></svg><dt>Cómo llegar</dt><dd><a href="https://maps.app.goo.gl/JhTRKgAn8uHUZHtN9" target="_blank" rel="noopener">Ver la ruta en Google Maps</a></dd></div>
+<div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle></svg><dt>Redes</dt><dd><a href="https://www.instagram.com/restobarelparral" target="_blank" rel="noopener">Instagram @restobarelparral</a><a href="https://www.facebook.com/RestobarElParral" target="_blank" rel="noopener">Facebook /RestobarElParral</a></dd></div>
 </dl>
 </div>
 <div class="loc-r rv">
@@ -314,7 +340,6 @@ Escríbenos por WhatsApp
 </g>
 </svg>
 <div class="map-foot">
-<p>Calle José Olaya 132 · Eten Puerto</p>
 <button class="btn btn-light btn-sm" type="button" data-map>Cómo llegar</button>
 </div>
 </div>
@@ -344,6 +369,7 @@ Contactar por WhatsApp
 <!-- ======== FOOTER ======== -->
 <div class="brand-line"></div>
 <footer class="foot">
+<img class="foot-mark" src="img/logo-claro.svg" alt="" aria-hidden="true">
 <div class="wrap">
 <div class="foot-grid">
 <div class="foot-a">
@@ -355,15 +381,17 @@ Contactar por WhatsApp
 </div>
 <div class="foot-b">
 <h4>Secciones</h4>
-<ul><li><a href="#favoritos"><i class="fa-solid fa-star" aria-hidden="true"></i>Favoritos</a></li><li><a href="#carta"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Carta</a></li><li><a href="#historia"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Historia</a></li><li><a href="#galeria"><i class="fa-solid fa-images" aria-hidden="true"></i>Galería</a></li><li><a href="#ubicacion"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Ubicación</a></li></ul>
+<ul><li><a href="#inicio"><i class="fa-solid fa-house" aria-hidden="true"></i>Inicio</a></li><li><a href="#favoritos"><i class="fa-solid fa-star" aria-hidden="true"></i>Favoritos</a></li><li><a href="#carta"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Carta</a></li><li><a href="#historia"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Historia</a></li><li><a href="#galeria"><i class="fa-solid fa-images" aria-hidden="true"></i>Galería</a></li><li><a href="#instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a></li><li><a href="#ubicacion"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Ubicación</a></li></ul>
 </div>
-<div class="foot-c">
-<h4>Visítanos</h4>
-<ul><li><a href="https://maps.app.goo.gl/JhTRKgAn8uHUZHtN9" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Calle José Olaya 132</a></li><li><span><i class="fa-solid fa-map" aria-hidden="true"></i>Eten Puerto, Chiclayo, Lambayeque</span></li><li><span><i class="fa-regular fa-clock" aria-hidden="true"></i>Todos los días · 9:00 a.m. – 6:00 p.m.</span></li></ul>
+<div class="foot-e">
+<div class="hcard">
+<p class="hc-status" id="hc-status"><span class="hc-dot"></span><b>Horario de atención</b></p>
+<p class="hc-sub">Todos los días · 9:00 a.m. – 6:00 p.m.</p>
+<div class="hc-act">
+<button class="btn btn-navy btn-sm" type="button" data-wa="una reserva"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Reservar</button>
+<button class="btn btn-wa btn-sm" type="button" data-map><i class="fa-solid fa-location-arrow" aria-hidden="true"></i>Cómo llegar</button>
 </div>
-<div class="foot-d">
-<h4>Contacto</h4>
-<ul><li><a href="https://wa.me/51958640141" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>958 640 141</a></li><li><a href="https://www.instagram.com/restobarelparral" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i>@restobarelparral</a></li><li><a href="https://www.facebook.com/RestobarElParral" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>/RestobarElParral</a></li></ul>
+</div>
 </div>
 </div>
 <div class="foot-bot">
@@ -376,6 +404,9 @@ Contactar por WhatsApp
 
 <!-- ======== FLOTANTES ======== -->
 <div class="fx">
+<button class="to-top" type="button" aria-label="Volver arriba" title="Volver arriba">
+<svg width="14" height="8" viewBox="0 0 12 7" fill="none" aria-hidden="true"><path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
 <button class="fab" type="button" aria-label="Pedir por WhatsApp" data-wa="un pedido o una reserva">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5Z"></path><path d="M8.5 9.5c.3 2.6 2.4 4.7 5 5"></path></svg>
 Reservar
