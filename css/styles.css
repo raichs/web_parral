@@ -103,12 +103,12 @@ h2.ttl em{font-style:italic}
 .hero-par{position:absolute;inset:-80px 0 0 0}
 .hero-img{display:block;width:100%;height:100%;object-fit:cover;animation:kb 22s cubic-bezier(.2,.6,.2,1) both}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,24,72,.75) 0%,rgba(6,24,72,.42) 24%,rgba(6,24,72,.45) 52%,rgba(6,24,72,.95) 100%),linear-gradient(90deg,rgba(6,24,72,.8) 0%,rgba(6,24,72,.45) 55%,rgba(6,24,72,.22) 80%)}
-.hero-copy{position:relative;flex:1;width:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:140px;padding-bottom:clamp(76px,11svh,128px)}
+.hero-copy{position:relative;flex:1;width:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:140px;padding-bottom:clamp(128px,14svh,152px)}
 .hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(52px,min(9.6cqi,14svh),156px);line-height:.9;letter-spacing:-.015em;margin:22px 0 0;max-width:11ch}
 .hero h1 em{font-style:italic;color:#EAF2FD;display:block}
 .hero-sub{font-size:clamp(17px,1.5cqi,20px);line-height:1.55;max-width:440px;margin:28px 0 0;color:rgba(255,253,248,.9)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
-.hero-meta{position:absolute;right:max(var(--gutter),calc((100% - 1520px)/2 + var(--gutter)));bottom:clamp(76px,11svh,128px);display:flex;flex-direction:column;align-items:flex-end;gap:14px;text-align:right}
+.hero-meta{position:absolute;right:max(var(--gutter),calc((100% - 1520px)/2 + var(--gutter)));bottom:clamp(128px,14svh,152px);display:flex;flex-direction:column;align-items:flex-end;gap:14px;text-align:right}
 .hero-meta p{margin:0;font-size:13px;color:rgba(255,253,248,.82);letter-spacing:.04em}
 .hero-meta .hero-loc{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:24px;color:#EAF2FD;letter-spacing:0}
 .scroll{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,253,248,.8);text-decoration:none;font-size:11px;letter-spacing:.3em;text-transform:uppercase;min-height:44px}
@@ -174,6 +174,8 @@ h2.ttl em{font-style:italic}
 .ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px dashed rgba(18,80,196,.5);color:#1250C4;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;text-align:center;padding:6px}
 .item-cat{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5A6585;font-weight:600;margin:0}
 .item .dish-row{margin-top:4px}
+/* Nombre largo + precio no caben en una línea (tablets): el precio baja a la siguiente en vez de salirse por el borde */
+.item .dish-row{flex-wrap:wrap;row-gap:4px}
 .item .dish-row h3{font-size:26px}
 .item p.d{font-size:14px;line-height:1.55;color:#3A4566;margin:6px 0 0}
 .item-foot{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:12px;flex-wrap:wrap}
@@ -190,7 +192,7 @@ h2.ttl em{font-style:italic}
 .hist-a{aspect-ratio:4/5;overflow:hidden;width:86%}
 .hist-a img,.hist-b img{display:block;width:100%;height:100%;object-fit:cover}
 .hist-b{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:16/10;overflow:hidden;border:12px solid #EAF2FD}
-.hist-cap{position:absolute;left:0;bottom:64px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#5A6585;font-weight:600}
+.hist-cap{position:absolute;left:0;bottom:64px;max-width:calc(48% - 32px);line-height:1.6;margin:0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#5A6585;font-weight:600}
 .hist-copy{grid-column:8/13}
 .hist-copy p.big{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,2.1cqi,30px);line-height:1.35;color:#0E1A3A;margin:36px 0 0}
 .hist-copy p.tbd{font-size:14px;line-height:1.6;color:#5A6585;margin:24px 0 0;padding-left:16px;border-left:1px solid #20B7F1}
@@ -417,6 +419,12 @@ h2.ttl em{font-style:italic}
 .hero h1{margin-top:16px}
 .hero-sub{margin-top:18px}
 .hero-cta{margin-top:26px}
+}
+/* Pantallas muy bajas: sin espacio para el indicador «Desliza» bajo los botones */
+@media (min-width:641px) and (max-height:620px){
+.scroll{display:none}
+.hero-copy{padding-bottom:96px}
+.hero-meta{bottom:96px}
 }
 @media (prefers-reduced-motion: reduce){
 .pg *,.pg *::before,.pg *::after,.fx *{animation:none !important;transition:none !important}
